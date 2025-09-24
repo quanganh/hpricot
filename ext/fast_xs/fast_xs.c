@@ -162,7 +162,7 @@ static VALUE fast_xs(VALUE self)
 	VALUE *tmp;
 	VALUE rv;
 
-	array = rb_rescue(unpack_utf8, self, unpack_uchar, self);
+        array = rb_rescue(unpack_utf8, self, (VALUE (*)(VALUE, VALUE))unpack_uchar, self);
 
 	for (tmp = RARRAY_PTR(array), s_len = i = RARRAY_LEN(array);
 	     --i >= 0;
