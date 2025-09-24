@@ -1,3 +1,12 @@
+# Hpricot (patched for Ruby 2.7+ on macOS ARM64)
+This is a patched fork of [Hpricot](https://github.com/asakusarb/hpricot) that fixes build issues
+with Ruby 2.7+ and Apple Silicon (ARM64).
+The original gem is no longer maintained.
+
+## Usage in Bundler
+In your `Gemfile`:
+`gem 'hpricot', git: 'git@github.com:quanganh/hpricot.git', branch: '0.8.6-patched'`
+
 # Hpricot, Read Any HTML
 
 Hpricot is a fast, flexible HTML parser written in C.  It's designed to be very
@@ -205,14 +214,14 @@ element from the root tag.
 The <tt>css_path</tt> method:
 
     doc.at("div > div:nth(1)").css_path
-      #=> "div > div:nth(1)" 
+      #=> "div > div:nth(1)"
     doc.at("#header").css_path
-      #=> "#header" 
+      #=> "#header"
 
 Or, the <tt>xpath</tt> method:
 
     doc.at("div > div:nth(1)").xpath
-      #=> "/div/div:eq(1)" 
+      #=> "/div/div:eq(1)"
     doc.at("#header").xpath
       #=> "//div[@id='header']"
 
